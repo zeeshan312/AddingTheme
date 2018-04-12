@@ -44,6 +44,34 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.0.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.0.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.0.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.0.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.0.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.0.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -174,20 +202,180 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Country.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\mytemplate\about.html" />
+    <Content Include="Content\mytemplate\all-sports.html" />
+    <Content Include="Content\mytemplate\athletics-about.html" />
+    <Content Include="Content\mytemplate\athletics-all-sports.html" />
+    <Content Include="Content\mytemplate\athletics-booking.html" />
+    <Content Include="Content\mytemplate\athletics-contact.html" />
+    <Content Include="Content\mytemplate\athletics-event-register.html" />
+    <Content Include="Content\mytemplate\athletics-events.html" />
+    <Content Include="Content\mytemplate\athletics-index.html" />
+    <Content Include="Content\mytemplate\athletics-join-club.html" />
+    <Content Include="Content\mytemplate\athletics-join-our-club.html" />
+    <Content Include="Content\mytemplate\athletics-match-fixing.html" />
+    <Content Include="Content\mytemplate\athletics-match.html" />
+    <Content Include="Content\mytemplate\athletics-team-ranking.html" />
+    <Content Include="Content\mytemplate\athletics-team-register.html" />
+    <Content Include="Content\mytemplate\athletics-team-squad.html" />
+    <Content Include="Content\mytemplate\athletics-training.html" />
+    <Content Include="Content\mytemplate\athletics.html" />
+    <Content Include="Content\mytemplate\basketball.html" />
+    <Content Include="Content\mytemplate\body-building.html" />
+    <Content Include="Content\mytemplate\booking.html" />
+    <Content Include="Content\mytemplate\boxing.html" />
+    <Content Include="Content\mytemplate\canoe-slalom.html" />
+    <Content Include="Content\mytemplate\contact.html" />
+    <Content Include="Content\mytemplate\cricket-about.html" />
+    <Content Include="Content\mytemplate\cricket-all-sports.html" />
+    <Content Include="Content\mytemplate\cricket-booking.html" />
+    <Content Include="Content\mytemplate\cricket-contact.html" />
+    <Content Include="Content\mytemplate\cricket-event-register.html" />
+    <Content Include="Content\mytemplate\cricket-events.html" />
+    <Content Include="Content\mytemplate\cricket-index.html" />
+    <Content Include="Content\mytemplate\cricket-join-club.html" />
+    <Content Include="Content\mytemplate\cricket-join-our-club.html" />
+    <Content Include="Content\mytemplate\cricket-match-fixing.html" />
+    <Content Include="Content\mytemplate\cricket-match.html" />
+    <Content Include="Content\mytemplate\cricket-team-ranking.html" />
+    <Content Include="Content\mytemplate\cricket-team-register.html" />
+    <Content Include="Content\mytemplate\cricket-team-squad.html" />
+    <Content Include="Content\mytemplate\cricket-training.html" />
+    <Content Include="Content\mytemplate\cricket.html" />
+    <Content Include="Content\mytemplate\css\bootstrap.css" />
+    <Content Include="Content\mytemplate\css\demo.css" />
+    <Content Include="Content\mytemplate\css\font-awesome.min.css" />
+    <Content Include="Content\mytemplate\css\mob.css" />
+    <Content Include="Content\mytemplate\css\style.css" />
+    <Content Include="Content\mytemplate\cycling.html" />
+    <Content Include="Content\mytemplate\demo\bg.jpg" />
+    <Content Include="Content\mytemplate\demo\gif.gif" />
+    <Content Include="Content\mytemplate\demo\pre1.png" />
+    <Content Include="Content\mytemplate\demo\pre2.png" />
+    <Content Include="Content\mytemplate\demo\pre3.png" />
+    <Content Include="Content\mytemplate\demo\pre4.png" />
+    <Content Include="Content\mytemplate\demo\pre5.png" />
+    <Content Include="Content\mytemplate\demo\pre6.png" />
+    <Content Include="Content\mytemplate\event-register.html" />
+    <Content Include="Content\mytemplate\events.html" />
+    <Content Include="Content\mytemplate\fav.html" />
+    <Content Include="Content\mytemplate\fitness-about.html" />
+    <Content Include="Content\mytemplate\fitness-all-sports.html" />
+    <Content Include="Content\mytemplate\fitness-booking.html" />
+    <Content Include="Content\mytemplate\fitness-contact.html" />
+    <Content Include="Content\mytemplate\fitness-event-register.html" />
+    <Content Include="Content\mytemplate\fitness-events.html" />
+    <Content Include="Content\mytemplate\fitness-index.html" />
+    <Content Include="Content\mytemplate\fitness-join-club.html" />
+    <Content Include="Content\mytemplate\fitness-join-our-club.html" />
+    <Content Include="Content\mytemplate\fitness-match-fixing.html" />
+    <Content Include="Content\mytemplate\fitness-match.html" />
+    <Content Include="Content\mytemplate\fitness-team-ranking.html" />
+    <Content Include="Content\mytemplate\fitness-team-register.html" />
+    <Content Include="Content\mytemplate\fitness-team-squad.html" />
+    <Content Include="Content\mytemplate\fitness-training.html" />
+    <Content Include="Content\mytemplate\fonts\fontawesome-webfont5b62.svg" />
+    <Content Include="Content\mytemplate\fonts\glyphicons-halflings-regular-2.html" />
+    <Content Include="Content\mytemplate\fonts\glyphicons-halflings-regular-3.html" />
+    <Content Include="Content\mytemplate\fonts\glyphicons-halflings-regular-4.html" />
+    <Content Include="Content\mytemplate\fonts\glyphicons-halflings-regular-5.html" />
+    <Content Include="Content\mytemplate\fonts\glyphicons-halflings-regular.html" />
+    <Content Include="Content\mytemplate\fonts\glyphicons-halflings-regulard41d.html" />
+    <Content Include="Content\mytemplate\football.html" />
+    <Content Include="Content\mytemplate\golf.html" />
+    <Content Include="Content\mytemplate\hockey.html" />
+    <Content Include="Content\mytemplate\images\athletics-logo.png" />
+    <Content Include="Content\mytemplate\images\bg-s.jpg" />
+    <Content Include="Content\mytemplate\images\bg2.html" />
+    <Content Include="Content\mytemplate\images\book.jpg" />
+    <Content Include="Content\mytemplate\images\cricket-logo.png" />
+    <Content Include="Content\mytemplate\images\cycle-bg.html" />
+    <Content Include="Content\mytemplate\images\fav.ico" />
+    <Content Include="Content\mytemplate\images\fitness-logo.png" />
+    <Content Include="Content\mytemplate\images\gif.gif" />
+    <Content Include="Content\mytemplate\images\join.jpg" />
+    <Content Include="Content\mytemplate\images\logo.png" />
+    <Content Include="Content\mytemplate\images\res-menu-air.html" />
+    <Content Include="Content\mytemplate\images\searchicon.png" />
+    <Content Include="Content\mytemplate\images\soccer-logo.png" />
+    <Content Include="Content\mytemplate\images\surf-bg.html" />
+    <Content Include="Content\mytemplate\images\surfing-logo.png" />
+    <Content Include="Content\mytemplate\images\teama.png" />
+    <Content Include="Content\mytemplate\images\whistle.png" />
+    <Content Include="Content\mytemplate\index.html" />
+    <Content Include="Content\mytemplate\join-club.html" />
+    <Content Include="Content\mytemplate\join-our-club.html" />
+    <Content Include="Content\mytemplate\js\bootstrap.js" />
+    <Content Include="Content\mytemplate\js\custom.js" />
+    <Content Include="Content\mytemplate\js\jquery.min.js" />
+    <Content Include="Content\mytemplate\main.html" />
+    <Content Include="Content\mytemplate\match-fixing.html" />
+    <Content Include="Content\mytemplate\soccer-about.html" />
+    <Content Include="Content\mytemplate\soccer-all-sports.html" />
+    <Content Include="Content\mytemplate\soccer-booking.html" />
+    <Content Include="Content\mytemplate\soccer-contact.html" />
+    <Content Include="Content\mytemplate\soccer-event-register.html" />
+    <Content Include="Content\mytemplate\soccer-events.html" />
+    <Content Include="Content\mytemplate\soccer-index.html" />
+    <Content Include="Content\mytemplate\soccer-join-club.html" />
+    <Content Include="Content\mytemplate\soccer-join-our-club.html" />
+    <Content Include="Content\mytemplate\soccer-match-fixing.html" />
+    <Content Include="Content\mytemplate\soccer-match.html" />
+    <Content Include="Content\mytemplate\soccer-team-ranking.html" />
+    <Content Include="Content\mytemplate\soccer-team-register.html" />
+    <Content Include="Content\mytemplate\soccer-team-squad.html" />
+    <Content Include="Content\mytemplate\soccer-training.html" />
+    <Content Include="Content\mytemplate\soccer.html" />
+    <Content Include="Content\mytemplate\surfing-about.html" />
+    <Content Include="Content\mytemplate\surfing-all-sports.html" />
+    <Content Include="Content\mytemplate\surfing-booking.html" />
+    <Content Include="Content\mytemplate\surfing-contact.html" />
+    <Content Include="Content\mytemplate\surfing-event-register.html" />
+    <Content Include="Content\mytemplate\surfing-events.html" />
+    <Content Include="Content\mytemplate\surfing-index.html" />
+    <Content Include="Content\mytemplate\surfing-join-club.html" />
+    <Content Include="Content\mytemplate\surfing-join-our-club.html" />
+    <Content Include="Content\mytemplate\surfing-match-fixing.html" />
+    <Content Include="Content\mytemplate\surfing-match.html" />
+    <Content Include="Content\mytemplate\surfing-team-ranking.html" />
+    <Content Include="Content\mytemplate\surfing-team-register.html" />
+    <Content Include="Content\mytemplate\surfing-team-squad.html" />
+    <Content Include="Content\mytemplate\surfing-training.html" />
+    <Content Include="Content\mytemplate\surfing.html" />
+    <Content Include="Content\mytemplate\swimming.html" />
+    <Content Include="Content\mytemplate\team-ranking.html" />
+    <Content Include="Content\mytemplate\team-register.html" />
+    <Content Include="Content\mytemplate\team-squad.html" />
+    <Content Include="Content\mytemplate\tennis.html" />
+    <Content Include="Content\mytemplate\training.html" />
+    <Content Include="Content\mytemplate\volleyball.html" />
+    <Content Include="Content\mytemplate\yoga.html" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\ai.0.22.9-build00167.js" />
+    <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\mytemplate\fonts\fontawesome-webfont5b62.eot" />
+    <Content Include="Content\mytemplate\fonts\fontawesome-webfont5b62.ttf" />
+    <Content Include="Content\mytemplate\fonts\fontawesome-webfont5b62.woff" />
+    <Content Include="Content\mytemplate\fonts\fontawesome-webfont5b62.woff2" />
+    <Content Include="Content\mytemplate\fonts\fontawesome-webfontd41d.eot" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -212,8 +400,6 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
@@ -234,6 +420,21 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\_mytemplate.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Shared\_Cricket.cshtml" />
+    <Content Include="Views\Home\Cricketallsports.cshtml" />
+    <Content Include="Views\Home\Cricketmatchfixing.cshtml" />
+    <Content Include="Views\Home\Events.cshtml" />
+    <Content Include="Views\Home\Cricketteamranking.cshtml" />
+    <Content Include="Views\Home\Squad.cshtml" />
+    <Content Include="Views\Home\Match.cshtml" />
+    <Content Include="Views\Home\Booking.cshtml" />
+    <Content Include="Views\Home\Register.cshtml" />
+    <Content Include="Views\Home\Training.cshtml" />
+    <Content Include="Views\Home\Joinclub.cshtml" />
+    <Content Include="Views\Home\cricketabout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

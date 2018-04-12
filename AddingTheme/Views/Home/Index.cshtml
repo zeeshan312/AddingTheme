@@ -1,31 +1,750 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_mytemplate.cshtml";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+ <!--SECTION: HEADER AND BANNER-->
+<section>
+    <div class="home">
+        <div class="h_l">
+            <!-- BRAND LOGO AND EVENT NAMES -->
+            <img src="@Url.Content("~/Content/mytemplate/")images/cricket-logo.png" alt="" />
+            <h2>Current cricket Events</h2>
+            <p>Lorem ipsum dolor sit amet, cons ecte tuer adipiscing elit, sed diam non ummy nibh euismod tinc idunt ut laoreet dolore magna ali quam erat volutpat.</p>
+            <ul>
+                <li>
+                    <a href="@Url.Content("~/Content/mytemplate/")cricket-match.html"><span>1</span>World Twenty20, 2017</a>
+                </li>
+                <li>
+                    <a href="@Url.Content("~/Content/mytemplate/")cricket-training.html"><span>2</span>Cricket Training for Kids</a>
+                </li>
+                <li>
+                    <a href="@Url.Content("~/Content/mytemplate/")cricket-join-our-club.html"><span>3</span>Join Our Club & Donate</a>
+                </li>
+                <li>
+                    <a href="@Url.Content("~/Content/mytemplate/")cricket-match.html"><span>4</span>Cricket Training - Register Now!</a>
+                </li>
+                <li>
+                    <a href="@Url.Content("~/Content/mytemplate/")cricket-match.html"><span>5</span>Selection for Under 18</a>
+                </li>
+            </ul>
+            <a href="@Url.Content("~/Content/mytemplate/")cricket-all-sports.html" class="aebtn">View All Events</a>
+        </div>
+        <div class="h_r">
+            <!-- SLIDER -->
+            <div class="slideshow-container">
+                <!-- FIRST SLIDER -->
+                <div class="mySlides fade">
+                    <div class="numbertext">1 / 2</div>
+                    <a href="#">
+                        <img src="@Url.Content("~/Content/mytemplate/")images/banner/cricket1.jpg" alt="">
+                    </a>
+                    <!--<div class="text">Caption Text</div>-->
+                </div>
+                <!-- SECOND SLIDER -->
+                <div class="mySlides fade">
+                    <div class="numbertext">2 / 2</div>
+                    <a href="#">
+                        <img src="@Url.Content("~/Content/mytemplate/")images/banner/b6.jpg" alt="">
+                    </a>
+                    <!--<div class="text">Caption Text</div>-->
+                </div>
+                <!-- YOU CAN ADD MULTIPLE SLIDERS NOW-->
+                <!-- SLIDER NAVIGATION -->
+                <a class="prev" onclick="plusSlides(-1)">❮</a>
+                <a class="next" onclick="plusSlides(1)">❯</a>
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+</section>
+
+<!-- SEARCH BOX -->
+<section>
+    <div class="hom-search lp">
+        <div class="row">
+            <div class="hom-search-inn">
+                <form>
+                    <ul>
+                        <li>
+                            <input type="text" placeholder="Search cricket News and Events Now!">
+                        </li>
+                        <li>
+                            <input type="submit" value="SEARCH">
+                        </li>
+                    </ul>
+                </form>
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+</section>
+<!--SECTION: UPCOMING SPORTS EVENTS-->
+<section>
+    <div class="se lp">
+        <div class="row">
+            <!-- TITLE -->
+            <div class="spe-title-1">
+                <h2>Upcoming <span>cricket SPOTLIGHT</span> in this month</h2>
+                <div class="hom-tit">
+                    <div class="hom-tit-1"></div>
+                    <div class="hom-tit-2"></div>
+                    <div class="hom-tit-3"></div>
+                </div>
+                <p>Feel the thrill of seeing a global sporting event in one of the world's most incredible cities. Headlining the calendar is the Dubai World Cup</p>
+            </div>
+            <!-- LEFT SIDE: SPORTS EVENTS -->
+            <div class="event-left col-md-9">
+                <!--Sports Events in Dubai-->
+                <ul>
+                    <!-- SPORTS EVENT:1 -->
+                    <li>
+                        <div class="el-img">
+                            <img class="img-responsive" src="@Url.Content("~/Content/mytemplate/")images/event/cricket/1.jpg" alt="">
+                        </div>
+                        <div class="el-con">
+                            <span>Jun 05 - Aug 27</span>
+                            <h3>ICC Champions Trophy 2017, Australia</h3>
+                            <p>The indoor sports mania is back again offering all sorts of indoor sports in the summer.</p>
+                            <a href="@Url.Content("~/Content/mytemplate/")cricket-match.html">Register Now</a><a href="@Url.Content("~/Content/mytemplate/")cricket-match.html">Ticket Booking</a><a href="@Url.Content("~/Content/mytemplate/")cricket-match.html">Read More</a>
+                        </div>
+                    </li>
+                    <!-- SPORTS EVENT:2 -->
+                    <li>
+                        <div class="el-img">
+                            <img class="img-responsive" src="@Url.Content("~/Content/mytemplate/")images/event/cricket/2.jpg" alt="">
+                        </div>
+                        <div class="el-con">
+                            <span>Jun 05 - Aug 27</span>
+                            <h3>U19 Cricket World Cup 2018, England</h3>
+                            <p>The indoor sports mania is back again offering all sorts of indoor sports in the summer.</p>
+                            <a href="@Url.Content("~/Content/mytemplate/")cricket-match.html">Register Now</a><a href="@Url.Content("~/Content/mytemplate/")cricket-match.html">Ticket Booking</a><a href="@Url.Content("~/Content/mytemplate/")cricket-match.html">Read More</a>
+                        </div>
+                    </li>
+                    <!-- SPORTS EVENT:3 -->
+                    <li>
+                        <div class="el-img">
+                            <img class="img-responsive" src="@Url.Content("~/Content/mytemplate/")images/event/cricket/3.jpg" alt="">
+                        </div>
+                        <div class="el-con">
+                            <span>Jun 05 - Aug 27</span>
+                            <h3>Join Cricket academies & coaching at Bristol</h3>
+                            <p>The indoor sports mania is back again offering all sorts of indoor sports in the summer.</p>
+                            <a href="@Url.Content("~/Content/mytemplate/")cricket-match.html">Register Now</a><a href="@Url.Content("~/Content/mytemplate/")cricket-match.html">Ticket Booking</a><a href="@Url.Content("~/Content/mytemplate/")cricket-match.html">Read More</a>
+                        </div>
+                    </li>
+                    <!-- SPORTS EVENT:4 -->
+                    <li>
+                        <div class="el-img">
+                            <img class="img-responsive" src="@Url.Content("~/Content/mytemplate/")images/event/cricket/4.jpg" alt="">
+                        </div>
+                        <div class="el-con">
+                            <span>Jun 05 - Aug 27</span>
+                            <h3>Professional Cricket Coaching for players, New Zealand</h3>
+                            <p>The indoor sports mania is back again offering all sorts of indoor sports in the summer.</p>
+                            <a href="@Url.Content("~/Content/mytemplate/")cricket-match.html">Register Now</a><a href="@Url.Content("~/Content/mytemplate/")cricket-match.html">Ticket Booking</a><a href="@Url.Content("~/Content/mytemplate/")cricket-match.html">Read More</a>
+                        </div>
+                    </li>
+                    <!-- SPORTS EVENT:4 -->
+                    <li>
+                        <div class="el-img">
+                            <img class="img-responsive" src="@Url.Content("~/Content/mytemplate/")images/event/cricket/5.jpg" alt="">
+                        </div>
+                        <div class="el-con">
+                            <span>Jun 05 - Aug 27</span>
+                            <h3>Grand Opening Cricket Fan Club, India</h3>
+                            <p>The indoor sports mania is back again offering all sorts of indoor sports in the summer.</p>
+                            <a href="@Url.Content("~/Content/mytemplate/")cricket-match.html">Register Now</a><a href="@Url.Content("~/Content/mytemplate/")cricket-match.html">Ticket Booking</a><a href="@Url.Content("~/Content/mytemplate/")cricket-match.html">Read More</a>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- RIGHT SIDE: FEATURE EVENTS -->
+            <div class="event-right col-md-3">
+                <ul>
+                    <li class="event-right-bg-1">
+                        <h4>warriors vs spurs</h4>
+                        <p>The indoor sports mania is back again offering all sorts of indoor</p>
+                        <a href="@Url.Content("~/Content/mytemplate/")cricket-match.html">View More</a>
+                    </li>
+                    <li class="event-right-bg-2 p-cri-hom-2">
+                        <h4>cricket batting training</h4>
+                        <p>The indoor sports mania is back again offering all sorts of indoor</p>
+                        <a href="@Url.Content("~/Content/mytemplate/")cricket-match.html">View More</a>
+                    </li>
+                    <li class="event-right-bg-3 p-cri-hom-3 pad-red-bot-0">
+                        <h4>Club Cricket Kits</h4>
+                        <p>The indoor sports mania is back again offering all sorts of indoor</p>
+                        <a href="@Url.Content("~/Content/mytemplate/")cricket-match.html">View More</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
-</div>
+</section>
+<!--SECTION: CHAMPIONS LEAGUE-->
+<section>
+    <div class="uc uc-cricket">
+        <div class="lp uc1">
+            <div class="row">
+                <div class="hom-tick-book">
+                    <h2>U19 Cricket World Cup</h2>
+                    <div class="hom-tick">
+                        <div class="hom-tick-1">
+                            <h3>26 July 2017</h3>
+                        </div>
+                        <div class="hom-tick-2">
+                            <span class="hom-tick-21">Preparing for the awesome Cricket experience</span>
+                        </div>
+                    </div>
+                    <a href="@Url.Content("~/Content/mytemplate/")cricket-match.html" class="hvr-sweep-to-right">Ticket Booking</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--SECTION: PICK A SPORTS-->
+<section>
+    <div class="lp spe-bot-red-3">
+        <div class="ela">
+            <!-- TITLE -->
+            <div class="spe-title-1">
+                <h2>Pick a <span>Class and join</span> the fun today</h2>
+                <div class="hom-tit">
+                    <div class="hom-tit-1"></div>
+                    <div class="hom-tit-2"></div>
+                    <div class="hom-tit-3"></div>
+                </div>
+                <p>Feel the thrill of seeing a global sporting event in one of the world's most incredible cities. Headlining the calendar is the Dubai World Cup</p>
+            </div>
+            <div class="hom-top-trends-box row">
+                <div class="col-md-6 hom-top-trends-box-1">
+                    <div class="hom-top-trends-box-11">
+                        <img class="img-responsive" src="@Url.Content("~/Content/mytemplate/")images/trends/1.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-md-6 hom-top-trends-box-2">
+                    <div class="hom-top-trends-box-21 p-cri">
+                        <h4>London: Junior Tournaments</h4>
+                        <p>The indoor sports mania is back again offering all sorts of indoor</p>
+                        <a href="@Url.Content("~/Content/mytemplate/")cricket-match.html">View More</a>
+                    </div>
+                </div>
+                <div class="col-md-6 hom-top-trends-box-2">
+                    <div class="hom-top-trends-box-21 hom-top-trends-box-22 p-cri1">
+                        <h4>Improve sports skills</h4>
+                        <p>The indoor sports mania is back again offering all sorts of indoor</p>
+                        <a href="@Url.Content("~/Content/mytemplate/")cricket-match.html">View More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="hom-top-trends row">
+                <!--TOP TRENDINGS-->
+                <div class="col-md-3">
+                    <div class="hom-trend">
+                        <div class="hom-trend-img">
+                            <img class="img-responsive" src="@Url.Content("~/Content/mytemplate/")images/trends/cricket/1.jpg" alt="">
+                        </div>
+                        <div class="hom-trend-con">
+                            <span><i class="fa fa-futbol-o" aria-hidden="true"></i> 2rd augest 2017</span>
+                            <a href="@Url.Content("~/Content/mytemplate/")cricket-all-sports.html">
+                                <h4>Away Swing Bowlers - Grip (Right arm)</h4>
+                            </a>
+                            <p>The Sports Games also celebrated and showcased sport, thanks to the city’s stunning setting</p>
+                        </div>
+                    </div>
+                </div>
+                <!--TOP TRENDINGS-->
+                <div class="col-md-3">
+                    <div class="hom-trend">
+                        <div class="hom-trend-img">
+                            <img class="img-responsive" src="@Url.Content("~/Content/mytemplate/")images/trends/cricket/11.jpg" alt="">
+                        </div>
+                        <div class="hom-trend-con">
+                            <span><i class="fa fa-futbol-o" aria-hidden="true"></i> 2rd augest 2017</span>
+                            <a href="@Url.Content("~/Content/mytemplate/")cricket-all-sports.html">
+                                <h4>Back foot drive</h4>
+                            </a>
+                            <p>The Sports Games also celebrated and showcased sport, thanks to the city’s stunning setting</p>
+                        </div>
+                    </div>
+                </div>
+                <!--TOP TRENDINGS-->
+                <div class="col-md-3">
+                    <div class="hom-trend">
+                        <div class="hom-trend-img">
+                            <img class="img-responsive" src="@Url.Content("~/Content/mytemplate/")images/trends/cricket/9.jpg" alt="">
+                        </div>
+                        <div class="hom-trend-con">
+                            <span><i class="fa fa-futbol-o" aria-hidden="true"></i> 2rd augest 2017</span>
+                            <a href="@Url.Content("~/Content/mytemplate/")cricket-all-sports.html">
+                                <h4>Back Foot Defence</h4>
+                            </a>
+                            <p>The Sports Games also celebrated and showcased sport, thanks to the city’s stunning setting</p>
+                        </div>
+                    </div>
+                </div>
+                <!--TOP TRENDINGS-->
+                <div class="col-md-3">
+                    <div class="hom-trend">
+                        <div class="hom-trend-img">
+                            <img class="img-responsive" src="@Url.Content("~/Content/mytemplate/")images/trends/cricket/4.jpg" alt="">
+                        </div>
+                        <div class="hom-trend-con">
+                            <span><i class="fa fa-futbol-o" aria-hidden="true"></i> 2rd augest 2017</span>
+                            <a href="@Url.Content("~/Content/mytemplate/")cricket-all-sports.html">
+                                <h4>Example of advancing down wicket</h4>
+                            </a>
+                            <p>The Sports Games also celebrated and showcased sport, thanks to the city’s stunning setting</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hom-top-trends row">
+                <!--TOP TRENDINGS-->
+                <div class="col-md-3">
+                    <div class="hom-trend">
+                        <div class="hom-trend-img">
+                            <img class="img-responsive" src="@Url.Content("~/Content/mytemplate/")images/trends/cricket/5.jpg" alt="">
+                        </div>
+                        <div class="hom-trend-con">
+                            <span><i class="fa fa-futbol-o" aria-hidden="true"></i> 2rd augest 2017</span>
+                            <a href="@Url.Content("~/Content/mytemplate/")cricket-all-sports.html">
+                                <h4>Front View (no Gloves)</h4>
+                            </a>
+                            <p>The Sports Games also celebrated and showcased sport, thanks to the city’s stunning setting</p>
+                        </div>
+                    </div>
+                </div>
+                <!--TOP TRENDINGS-->
+                <div class="col-md-3">
+                    <div class="hom-trend">
+                        <div class="hom-trend-img">
+                            <img class="img-responsive" src="@Url.Content("~/Content/mytemplate/")images/trends/cricket/6.jpg" alt="">
+                        </div>
+                        <div class="hom-trend-con">
+                            <span><i class="fa fa-futbol-o" aria-hidden="true"></i> 2rd augest 2017</span>
+                            <a href="@Url.Content("~/Content/mytemplate/")cricket-all-sports.html">
+                                <h4>Inswing Bowling Grip (Right Arm)</h4>
+                            </a>
+                            <p>The Sports Games also celebrated and showcased sport, thanks to the city’s stunning setting</p>
+                        </div>
+                    </div>
+                </div>
+                <!--TOP TRENDINGS-->
+                <div class="col-md-3">
+                    <div class="hom-trend">
+                        <div class="hom-trend-img">
+                            <img class="img-responsive" src="@Url.Content("~/Content/mytemplate/")images/trends/cricket/7.jpg" alt="">
+                        </div>
+                        <div class="hom-trend-con">
+                            <span><i class="fa fa-futbol-o" aria-hidden="true"></i> 2rd augest 2017</span>
+                            <a href="@Url.Content("~/Content/mytemplate/")cricket-all-sports.html">
+                                <h4>Leg Spin - Grip</h4>
+                            </a>
+                            <p>The Sports Games also celebrated and showcased sport, thanks to the city’s stunning setting</p>
+                        </div>
+                    </div>
+                </div>
+                <!--TOP TRENDINGS-->
+                <div class="col-md-3">
+                    <div class="hom-trend pad-red-bot-0">
+                        <div class="hom-trend-img">
+                            <img class="img-responsive" src="@Url.Content("~/Content/mytemplate/")images/trends/cricket/8.jpg" alt="">
+                        </div>
+                        <div class="hom-trend-con">
+                            <span><i class="fa fa-futbol-o" aria-hidden="true"></i> 2rd augest 2017</span>
+                            <a href="@Url.Content("~/Content/mytemplate/")cricket-all-sports.html">
+                                <h4>Sample drop feed</h4>
+                            </a>
+                            <p>The Sports Games also celebrated and showcased sport, thanks to the city’s stunning setting</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--SECTION: EVENTS AND POINTS-->
+<section class="ev-po">
+    <div class="lp">
+        <div class="row">
+            <div class="col-md-6 eve-res">
+                <div class="events ev-po-1 ev-po-com">
+                    <div class="ev-po-title pag-cri-inn-combg1">
+                        <h3>Upcoming cricket Events</h3>
+                        <p>Headlining the calendar is the Dubai World Cup</p>
+                    </div>
+                    <table class="myTable">
+                        <tbody>
+                            <tr>
+                                <th>#</th>
+                                <th>Event</th>
+                                <th class="e_h1">Place</th>
+                                <th>Booking</th>
+                                <th>Register</th>
+                            </tr>
+                            <tr>
+                                <td>01</td>
+                                <td>
+                                    <img src="@Url.Content("~/Content/mytemplate/")images/trends/3.jpg" alt="">
+                                    <div class="h-tm-ra1">
+                                        <h4>Football</h4><span>AUG 23RD, 2017</span>
+                                    </div>
+                                </td>
+                                <td class="e_h1">Barcelona</td>
+                                <td>
+                                    <a href="@Url.Content("~/Content/mytemplate/")booking.html" class="link-btn">Book Now</a>
+                                </td>
+                                <td>
+                                    <a href="@Url.Content("~/Content/mytemplate/")team-register.html" class="link-btn reg-btn">Register Now</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>02</td>
+                                <td>
+                                    <img src="@Url.Content("~/Content/mytemplate/")images/trends/2.jpg" alt="">
+                                    <div class="h-tm-ra1">
+                                        <h4>Handball</h4><span>SEPT 02RD, 2016</span>
+                                    </div>
+                                </td>
+                                <td class="e_h1">London</td>
+                                <td>
+                                    <a href="@Url.Content("~/Content/mytemplate/")booking.html" class="link-btn">Book Now</a>
+                                </td>
+                                <td>
+                                    <a href="@Url.Content("~/Content/mytemplate/")team-register.html" class="link-btn reg-btn">Register Now</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>03</td>
+                                <td>
+                                    <img src="@Url.Content("~/Content/mytemplate/")images/trends/4.jpg" alt="">
+                                    <div class="h-tm-ra1">
+                                        <h4>Rugby Pro</h4><span>JANUARY 12TH, 2018</span>
+                                    </div>
+                                </td>
+                                <td class="e_h1">Tokyo</td>
+                                <td>
+                                    <a href="@Url.Content("~/Content/mytemplate/")booking.html" class="link-btn">Book Now</a>
+                                </td>
+                                <td>
+                                    <a href="@Url.Content("~/Content/mytemplate/")team-register.html" class="link-btn reg-btn">Register Now</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>04</td>
+                                <td>
+                                    <img src="@Url.Content("~/Content/mytemplate/")images/trends/5.jpg" alt="">
+                                    <div class="h-tm-ra1">
+                                        <h4>Volleyball</h4><span>NOV 05TH, 2017</span>
+                                    </div>
+                                </td>
+                                <td class="e_h1">Melbourne</td>
+                                <td>
+                                    <a href="@Url.Content("~/Content/mytemplate/")booking.html" class="link-btn">Book Now</a>
+                                </td>
+                                <td>
+                                    <a href="@Url.Content("~/Content/mytemplate/")team-register.html" class="link-btn reg-btn">Register Now</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>05</td>
+                                <td>
+                                    <img src="@Url.Content("~/Content/mytemplate/")images/trends/6.jpg" alt="">
+                                    <div class="h-tm-ra1">
+                                        <h4>The Alchemists</h4><span>DEC 07TH, 2017</span>
+                                    </div>
+                                </td>
+                                <td class="e_h1">Beijing</td>
+                                <td>
+                                    <a href="@Url.Content("~/Content/mytemplate/")booking.html" class="link-btn">Book Now</a>
+                                </td>
+                                <td>
+                                    <a href="@Url.Content("~/Content/mytemplate/")team-register.html" class="link-btn reg-btn">Register Now</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>06</td>
+                                <td>
+                                    <img src="@Url.Content("~/Content/mytemplate/")images/trends/7.jpg" alt="">
+                                    <div class="h-tm-ra1">
+                                        <h4>Cricket</h4><span>OCT 18TH, 2017</span>
+                                    </div>
+                                </td>
+                                <td class="e_h1"> Berlin</td>
+                                <td>
+                                    <a href="@Url.Content("~/Content/mytemplate/")booking.html" class="link-btn">Book Now</a>
+                                </td>
+                                <td>
+                                    <a href="@Url.Content("~/Content/mytemplate/")team-register.html" class="link-btn reg-btn">Register Now</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>07</td>
+                                <td>
+                                    <img src="@Url.Content("~/Content/mytemplate/")images/trends/8.jpg" alt="">
+                                    <div class="h-tm-ra1">
+                                        <h4>Basketball</h4><span>JUNE 21TH, 2017</span>
+                                    </div>
+                                </td>
+                                <td class="e_h1">Rio</td>
+                                <td>
+                                    <a href="@Url.Content("~/Content/mytemplate/")booking.html" class="link-btn">Book Now</a>
+                                </td>
+                                <td>
+                                    <a href="@Url.Content("~/Content/mytemplate/")team-register.html" class="link-btn reg-btn">Register Now</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>08</td>
+                                <td>
+                                    <img src="@Url.Content("~/Content/mytemplate/")images/trends/9.jpg" alt="">
+                                    <div class="h-tm-ra1">
+                                        <h4>Badminton</h4><span>MAY 04TH, 2018</span>
+                                    </div>
+                                </td>
+                                <td class="e_h1">Manchester</td>
+                                <td>
+                                    <a href="@Url.Content("~/Content/mytemplate/")booking.html" class="link-btn">Book Now</a>
+                                </td>
+                                <td>
+                                    <a href="@Url.Content("~/Content/mytemplate/")team-register.html" class="link-btn reg-btn">Register Now</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>09</td>
+                                <td>
+                                    <img src="@Url.Content("~/Content/mytemplate/")images/trends/10.jpg" alt="">
+                                    <div class="h-tm-ra1">
+                                        <h4>marathon</h4><span>MARCH 28TH, 2017</span>
+                                    </div>
+                                </td>
+                                <td class="e_h1">Toronto</td>
+                                <td>
+                                    <a href="@Url.Content("~/Content/mytemplate/")booking.html" class="link-btn">Book Now</a>
+                                </td>
+                                <td>
+                                    <a href="@Url.Content("~/Content/mytemplate/")team-register.html" class="link-btn reg-btn">Register Now</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>
+                                    <img src="@Url.Content("~/Content/mytemplate/")images/trends/2.jpg" alt="">
+                                    <div class="h-tm-ra1">
+                                        <h4>Tennis</h4><span>FEB 4TH, 2020</span>
+                                    </div>
+                                </td>
+                                <td class="e_h1">Sydney</td>
+                                <td>
+                                    <a href="@Url.Content("~/Content/mytemplate/")booking.html" class="link-btn">Book Now</a>
+                                </td>
+                                <td>
+                                    <a href="@Url.Content("~/Content/mytemplate/")team-register.html" class="link-btn reg-btn">Register Now</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-6 eve-res">
+                <div class="events ev-po-2 ev-po-com">
+                    <div class="ev-po-title pag-cri-inn-combg">
+                        <h3>Player Ranking 2017</h3>
+                        <p>Headlining the calendar is the Dubai World Cup</p>
+                    </div>
+                    <table class="myTable">
+                        <tbody>
+                            <tr>
+                                <th>Rank</th>
+                                <th>TEAMS</th>
+                                <th>W</th>
+                                <th>L</th>
+                                <th>D</th>
+                                <th>PTS</th>
+                            </tr>
+                            <tr>
+                                <td>01</td>
+                                <td>
+                                    <img src="@Url.Content("~/Content/mytemplate/")images/coun/19.png" alt="">
+                                    <div class="h-tm-ra">
+                                        <h4>The Alchemists</h4><span>Eric Bros School</span>
+                                    </div>
+                                </td>
+                                <td>84</td>
+                                <td>36</td>
+                                <td>12</td>
+                                <td>168</td>
+                            </tr>
+                            <tr>
+                                <td>02</td>
+                                <td>
+                                    <img src="@Url.Content("~/Content/mytemplate/")images/coun/t2.png" alt="">
+                                    <div class="h-tm-ra">
+                                        <h4>Bloody Wave</h4><span>Atlantic School</span>
+                                    </div>
+                                </td>
+                                <td>84</td>
+                                <td>36</td>
+                                <td>12</td>
+                                <td>168</td>
+                            </tr>
+                            <tr>
+                                <td>03</td>
+                                <td>
+                                    <img src="@Url.Content("~/Content/mytemplate/")images/coun/t3.png" alt="">
+                                    <div class="h-tm-ra">
+                                        <h4>L.A Pirates</h4><span>Bebop Institute</span>
+                                    </div>
+                                </td>
+                                <td>84</td>
+                                <td>36</td>
+                                <td>12</td>
+                                <td>168</td>
+                            </tr>
+                            <tr>
+                                <td>04</td>
+                                <td>
+                                    <img src="@Url.Content("~/Content/mytemplate/")images/coun/t4.png" alt="">
+                                    <div class="h-tm-ra">
+                                        <h4>The Alchemists</h4><span>Eric Bros School</span>
+                                    </div>
+                                </td>
+                                <td>84</td>
+                                <td>36</td>
+                                <td>12</td>
+                                <td>168</td>
+                            </tr>
+                            <tr>
+                                <td>05</td>
+                                <td>
+                                    <img src="@Url.Content("~/Content/mytemplate/")images/coun/t5.png" alt="">
+                                    <div class="h-tm-ra">
+                                        <h4>The Alchemists</h4><span>Eric Bros School</span>
+                                    </div>
+                                </td>
+                                <td>84</td>
+                                <td>36</td>
+                                <td>12</td>
+                                <td>168</td>
+                            </tr>
+                            <tr>
+                                <td>06</td>
+                                <td>
+                                    <img src="@Url.Content("~/Content/mytemplate/")images/coun/t6.png" alt="">
+                                    <div class="h-tm-ra">
+                                        <h4>The Alchemists</h4><span>Eric Bros School</span>
+                                    </div>
+                                </td>
+                                <td>84</td>
+                                <td>36</td>
+                                <td>12</td>
+                                <td>168</td>
+                            </tr>
+                            <tr>
+                                <td>07</td>
+                                <td>
+                                    <img src="@Url.Content("~/Content/mytemplate/")images/coun/t7.png" alt="">
+                                    <div class="h-tm-ra">
+                                        <h4>The Alchemists</h4><span>Eric Bros School</span>
+                                    </div>
+                                </td>
+                                <td>84</td>
+                                <td>36</td>
+                                <td>12</td>
+                                <td>168</td>
+                            </tr>
+                            <tr>
+                                <td>08</td>
+                                <td>
+                                    <img src="@Url.Content("~/Content/mytemplate/")images/coun/t8.png" alt="">
+                                    <div class="h-tm-ra">
+                                        <h4>The Alchemists</h4><span>Eric Bros School</span>
+                                    </div>
+                                </td>
+                                <td>84</td>
+                                <td>36</td>
+                                <td>12</td>
+                                <td>168</td>
+                            </tr>
+                            <tr>
+                                <td>09</td>
+                                <td>
+                                    <img src="@Url.Content("~/Content/mytemplate/")images/coun/t9.png" alt="">
+                                    <div class="h-tm-ra">
+                                        <h4>The Alchemists</h4><span>Eric Bros School</span>
+                                    </div>
+                                </td>
+                                <td>84</td>
+                                <td>36</td>
+                                <td>12</td>
+                                <td>168</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>
+                                    <img src="@Url.Content("~/Content/mytemplate/")images/coun/t9.png" alt="">
+                                    <div class="h-tm-ra">
+                                        <h4>The Alchemists</h4><span>Eric Bros School</span>
+                                    </div>
+                                </td>
+                                <td>84</td>
+                                <td>36</td>
+                                <td>12</td>
+                                <td>168</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--SECTION:JOIN CLUB AND MAKE DONATION-->
+<section>
+    <div class="lp">
+        <!-- TITLE -->
+        <div class="spe-title-1">
+            <h2>Fundraising for Sports <span>Clubs & Charities</span></h2>
+            <div class="hom-tit">
+                <div class="hom-tit-1"></div>
+                <div class="hom-tit-2"></div>
+                <div class="hom-tit-3"></div>
+            </div>
+            <p>Feel the thrill of seeing a global sporting event in one of the world's most incredible cities. Headlining the calendar is the Dubai World Cup</p>
+        </div>
+        <div class="ela">
+            <!-- JOIN OUR CLUB: LEFT SIDE IMAGE -->
+            <div class="a21">
+                <img src="@Url.Content("~/Content/mytemplate/")images/join.jpg" alt="" />
+            </div>
+            <!-- JOIN OUR CLUB: RIGHT SIDE -->
+            <div class="a22 home-join pad-red-bot-0 pad-red-bot-pad-0">
+                <h2>Be a good sport and donate to your local club through</h2>
+                <span class="spor-eve-sp">Over 200 members and growing, We love our team. Fundraise or donate to Sport Relief with Us.The worlds leading online fundraising platform, helping charities to make more</span>
+                <p>
+                    Cras justo odio, dapisonec elit non mi porta gravida curab blait tempus. Maecenas sed diam eget risus varius blandit sit amet non magna rutrum faucibus dolor auctor.
+                    <br>Cras justo odio, dapisonec elit non mi porta gravida curab blait tempus. Maecenas sed diam eget risus varius blandit non magna.
+                </p>
+                <ul>
+                    <li>
+                        <a href="@Url.Content("~/Content/mytemplate/")cricket-join-our-club.html" class="joc">Join Our Club</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Content("~/Content/mytemplate/")cricket-join-club.html" class="md">Make Donations</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
