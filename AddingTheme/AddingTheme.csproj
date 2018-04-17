@@ -201,7 +201,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804161039393_contact.cs" />
+    <Compile Include="Migrations\201804161039393_contact.Designer.cs">
+      <DependentUpon>201804161039393_contact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\Country.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -252,20 +258,7 @@
     <Content Include="Content\mytemplate\cricket-team-squad.html" />
     <Content Include="Content\mytemplate\cricket-training.html" />
     <Content Include="Content\mytemplate\cricket.html" />
-    <Content Include="Content\mytemplate\css\bootstrap.css" />
-    <Content Include="Content\mytemplate\css\demo.css" />
-    <Content Include="Content\mytemplate\css\font-awesome.min.css" />
-    <Content Include="Content\mytemplate\css\mob.css" />
-    <Content Include="Content\mytemplate\css\style.css" />
     <Content Include="Content\mytemplate\cycling.html" />
-    <Content Include="Content\mytemplate\demo\bg.jpg" />
-    <Content Include="Content\mytemplate\demo\gif.gif" />
-    <Content Include="Content\mytemplate\demo\pre1.png" />
-    <Content Include="Content\mytemplate\demo\pre2.png" />
-    <Content Include="Content\mytemplate\demo\pre3.png" />
-    <Content Include="Content\mytemplate\demo\pre4.png" />
-    <Content Include="Content\mytemplate\demo\pre5.png" />
-    <Content Include="Content\mytemplate\demo\pre6.png" />
     <Content Include="Content\mytemplate\event-register.html" />
     <Content Include="Content\mytemplate\events.html" />
     <Content Include="Content\mytemplate\fav.html" />
@@ -284,40 +277,12 @@
     <Content Include="Content\mytemplate\fitness-team-register.html" />
     <Content Include="Content\mytemplate\fitness-team-squad.html" />
     <Content Include="Content\mytemplate\fitness-training.html" />
-    <Content Include="Content\mytemplate\fonts\fontawesome-webfont5b62.svg" />
-    <Content Include="Content\mytemplate\fonts\glyphicons-halflings-regular-2.html" />
-    <Content Include="Content\mytemplate\fonts\glyphicons-halflings-regular-3.html" />
-    <Content Include="Content\mytemplate\fonts\glyphicons-halflings-regular-4.html" />
-    <Content Include="Content\mytemplate\fonts\glyphicons-halflings-regular-5.html" />
-    <Content Include="Content\mytemplate\fonts\glyphicons-halflings-regular.html" />
-    <Content Include="Content\mytemplate\fonts\glyphicons-halflings-regulard41d.html" />
     <Content Include="Content\mytemplate\football.html" />
     <Content Include="Content\mytemplate\golf.html" />
     <Content Include="Content\mytemplate\hockey.html" />
-    <Content Include="Content\mytemplate\images\athletics-logo.png" />
-    <Content Include="Content\mytemplate\images\bg-s.jpg" />
-    <Content Include="Content\mytemplate\images\bg2.html" />
-    <Content Include="Content\mytemplate\images\book.jpg" />
-    <Content Include="Content\mytemplate\images\cricket-logo.png" />
-    <Content Include="Content\mytemplate\images\cycle-bg.html" />
-    <Content Include="Content\mytemplate\images\fav.ico" />
-    <Content Include="Content\mytemplate\images\fitness-logo.png" />
-    <Content Include="Content\mytemplate\images\gif.gif" />
-    <Content Include="Content\mytemplate\images\join.jpg" />
-    <Content Include="Content\mytemplate\images\logo.png" />
-    <Content Include="Content\mytemplate\images\res-menu-air.html" />
-    <Content Include="Content\mytemplate\images\searchicon.png" />
-    <Content Include="Content\mytemplate\images\soccer-logo.png" />
-    <Content Include="Content\mytemplate\images\surf-bg.html" />
-    <Content Include="Content\mytemplate\images\surfing-logo.png" />
-    <Content Include="Content\mytemplate\images\teama.png" />
-    <Content Include="Content\mytemplate\images\whistle.png" />
     <Content Include="Content\mytemplate\index.html" />
     <Content Include="Content\mytemplate\join-club.html" />
     <Content Include="Content\mytemplate\join-our-club.html" />
-    <Content Include="Content\mytemplate\js\bootstrap.js" />
-    <Content Include="Content\mytemplate\js\custom.js" />
-    <Content Include="Content\mytemplate\js\jquery.min.js" />
     <Content Include="Content\mytemplate\main.html" />
     <Content Include="Content\mytemplate\match-fixing.html" />
     <Content Include="Content\mytemplate\soccer-about.html" />
@@ -371,11 +336,6 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\mytemplate\fonts\fontawesome-webfont5b62.eot" />
-    <Content Include="Content\mytemplate\fonts\fontawesome-webfont5b62.ttf" />
-    <Content Include="Content\mytemplate\fonts\fontawesome-webfont5b62.woff" />
-    <Content Include="Content\mytemplate\fonts\fontawesome-webfont5b62.woff2" />
-    <Content Include="Content\mytemplate\fonts\fontawesome-webfontd41d.eot" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -438,6 +398,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\mytemplate\css\" />
+    <Folder Include="Content\mytemplate\demo\" />
+    <Folder Include="Content\mytemplate\fonts\" />
+    <Folder Include="Content\mytemplate\images\" />
+    <Folder Include="Content\mytemplate\js\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -446,6 +411,11 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201804161039393_contact.resx">
+      <DependentUpon>201804161039393_contact.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
