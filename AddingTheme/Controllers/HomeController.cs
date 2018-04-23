@@ -1,13 +1,51 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using AddingTheme.Models;
 
 namespace AddingTheme.Controllers
 {
     public class HomeController : Controller
     {
+        ApplicationDbContext context;
+
+        public HomeController()
+        {
+            context = new ApplicationDbContext();
+        }
+
+        public ActionResult Contactus()
+        {
+            return View(context.Contacts.ToList());
+        }
+
+        public ActionResult Contact()
+        {
+            return View(new Contact());
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Contact(Contact model)
+        {
+            if (ModelState.IsValid)
+            {
+                context.Contacts.Add(model);
+                await context.SaveChangesAsync();
+                return RedirectToAction("Contactus");
+            }
+            return View();
+        }
+
+
+
+
+
+
+
         public ActionResult Index()
         {
             return View();
@@ -20,12 +58,7 @@ namespace AddingTheme.Controllers
             return View();
         }
 
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
+       
 
         public ActionResult Cricketallsports()
         {
